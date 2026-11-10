@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827"><meta name="description" content="DESTIQORA business CRM">
+<title>DESTIQORA — Leads. Relationships. Growth.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="toast" class="toast" role="status"></div>
+<section id="authScreen" class="auth-screen"><div class="auth-card">
+<div class="brand-mark">D</div><p class="eyebrow">YOUR BUSINESS COMMAND CENTER</p><h1>DESTI<span>QORA</span></h1>
+<p class="muted">Leads. Relationships. Growth.</p>
+<form id="loginForm"><label>Email address</label><input id="email" type="email" autocomplete="username" required placeholder="you@example.com">
+<label>Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Password">
+<button class="btn primary full">Sign in</button></form>
+<div class="auth-links"><button id="resetPassword" class="text-btn">Forgot password?</button></div>
+<p class="auth-help">पहले Firebase Console में Email/Password Authentication चालू करें और अपना account बनाएँ।</p><p id="authError" class="error"></p>
+</div></section>
+<div id="app" class="app hidden">
+<aside id="sidebar" class="sidebar"><div class="side-brand"><div class="brand-mark small">D</div><div><b>DESTIQORA</b><small>BUSINESS CRM</small></div></div>
+<nav id="navigation">
+<button class="nav-item active" data-page="dashboard">▦ <span>Dashboard</span></button>
+<button class="nav-item" data-page="leads">◎ <span>Lead Database</span></button>
+<button class="nav-item" data-page="followups">◷ <span>Follow-ups</span></button>
+<button class="nav-item" data-page="clients">◇ <span>Clients</span></button>
+<button class="nav-item" data-page="projects">▤ <span>Projects</span></button>
+<button class="nav-item" data-page="payments">₹ <span>Payments</span></button>
+<button class="nav-item" data-page="expenses">↘ <span>Expenses</span></button>
+<button class="nav-item" data-page="tasks">☑ <span>Tasks & Notes</span></button>
+<button class="nav-item" data-page="reports">▥ <span>Reports & Export</span></button>
+<button class="nav-item" data-page="settings">⚙ <span>Settings & Backup</span></button>
+</nav><div class="sidebar-bottom"><div class="user-mini"><div class="avatar">D</div><div><b id="userEmail">Account</b><small>Workspace owner</small></div></div><button id="logoutBtn" class="nav-item logout">↪ <span>Sign out</span></button></div></aside>
+<main class="main"><header class="topbar"><button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button><div><p class="eyebrow" id="dateLabel"></p><h2 id="pageTitle">Dashboard</h2></div><button id="quickAdd" class="btn primary">＋ Quick add</button></header>
+<div id="pageContent" class="page"></div></main></div>
+<dialog id="recordDialog" class="modal"><form id="recordForm"><div class="modal-head"><div><p class="eyebrow" id="modalEyebrow">RECORD DETAILS</p><h2 id="modalTitle">Add record</h2></div><button type="button" id="closeModal" class="icon-btn">×</button></div><div id="formFields" class="form-grid"></div><p id="formError" class="error"></p><div class="modal-actions"><button type="button" id="cancelModal" class="btn secondary">Cancel</button><button class="btn primary">Save record</button></div></form></dialog>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script><script src="app.js"></script>
+</body></html>
